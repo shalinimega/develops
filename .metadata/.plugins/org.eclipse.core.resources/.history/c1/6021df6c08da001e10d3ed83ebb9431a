@@ -1,0 +1,14 @@
+package com.OnesoftProject.contoller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+public class OnesoftController {
+	@GetMapping("/getStudent")
+	public String msg()
+	{
+		return "this is student";
+	}
+	
+	
+
+}

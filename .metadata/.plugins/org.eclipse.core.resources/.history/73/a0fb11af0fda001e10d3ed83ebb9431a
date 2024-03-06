@@ -1,0 +1,31 @@
+package com.OnesoftProject;
+
+import org.springframework.cglib.proxy.NoOp;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+@EnableWebSecurity
+@Configuration
+public class Onesoftconfig  extends WebSecurityConfigurerAdapter{
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.inMemoryAuthentication().withUser("shalini").password("$2a$12$S8Xro4S3bE9KyBmVXq8PIOj0q3WfsEoVQgOgJD3a1K0Cs/eA5ncmi").roles("student");
+			}
+	/*@Bean
+	public PasswordEncoder getPass()
+	{
+		return NoOpPasswordEncoder.getInstance();
+	}*/
+	@Bean
+	public PasswordEncoder getPass()
+	{
+		return new BCryptPasswordEncoder(12);
+	}
+
+}

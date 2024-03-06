@@ -1,0 +1,37 @@
+package com.Bank.service;
+
+import java.text.NumberFormat;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Bank.dao.Bankdao;
+import com.Bank.entity.Bank;
+
+@Service
+public class Bankservice {
+	@Autowired
+	Bankdao bd;
+	public String sendall(List<Bank> mm)
+	{
+		return bd.sendall(mm);
+	}
+	public String getall(String a)
+	{
+		return bd.getall(a);
+	}
+	public String exc(String a1)
+	{
+		try
+		{
+			int b=Integer.parseUnsignedInt(a1);
+		}
+		catch(NumberFormatException  e)
+		{
+			System.out.println(e);
+		}
+		return bd.exc(a1);
+	}
+
+}

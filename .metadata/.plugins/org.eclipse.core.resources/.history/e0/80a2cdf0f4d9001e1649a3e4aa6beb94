@@ -1,0 +1,40 @@
+package com.Junit;
+
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.Test;
+
+public class AssertSample {
+	@Test
+	public void testAssertEqauls()
+	{
+		assertEquals(10,10);
+	}
+	@Test
+	public void testAssertNull()
+	{
+		assertNull(null,null);
+	}
+	@Test
+	public void testAssertTrue()
+	{
+		assertTrue(10>5);
+	}
+	@Test
+	public void testAssertSame()
+	{
+		assertSame("shalini","shalini");
+	}
+	@Test
+	public void testArrayEquals()
+	{
+		int[] a= {5,10,15};
+		int[] b= {5,10,15};
+		assertArrayEquals(a,b);
+	}
+
+}

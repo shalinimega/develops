@@ -1,0 +1,22 @@
+package com.Junit;
+
+public class Calualtor {
+	public int add(int a,int b)
+	{
+		return a+b;
+	}
+	public int sub()
+	{
+		return 34-67;
+	}
+	public void multi(int y,int c)
+	{
+		System.out.println(y*c);
+	}
+	public void div()
+	{
+		System.out.println(78/2);
+	}
+	
+
+}

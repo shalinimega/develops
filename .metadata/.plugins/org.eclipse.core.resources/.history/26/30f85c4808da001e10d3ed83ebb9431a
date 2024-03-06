@@ -1,0 +1,14 @@
+package com.OnesoftProject.contoller;
+
+import org.springframework.web.bind.annotation.PostMapping;
+
+public class OnesoftController {
+	@PostMapping("/getStudent")
+	public String msg()
+	{
+		return "this is student";
+	}
+	
+	
+
+}

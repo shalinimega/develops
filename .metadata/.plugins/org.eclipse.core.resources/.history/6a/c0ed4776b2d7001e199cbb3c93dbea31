@@ -1,0 +1,45 @@
+package com.Bank.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Bank.customException.IfscNotfoundException;
+import com.Bank.dao.Bankdao;
+import com.Bank.entity.Bank;
+
+@Service
+public class Bankservice {
+	@Autowired
+	Bankdao bd;
+	public String sendall(List<Bank> mm)
+	{
+		return bd.sendall(mm);
+	}
+	public String getall(String a)
+	{
+		return bd.getall(a);
+	}
+	public String exc(String a1)throws IfscNotfoundException
+	{
+		try
+		{
+			if(a1.equals("sbi56"))
+			{
+				return "correct";
+			}
+			else
+			{
+				throw new IfscNotfoundException("not correct");
+			}
+		    //int b=Integer.parseUnsignedInt(a1);
+		}
+		catch(NumberFormatException  e)
+		{
+			return "number format exception";
+		}
+	
+	}
+
+}
